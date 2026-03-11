@@ -5,6 +5,7 @@ import './App.css'
 import ToDo from './Todo';
 import Actor  from './actor';
 import Singer from './Singer';
+import Library from './library';
 
 function App() {
   const actors = ['Chris Hemsworth', 'RDJ', 'Chris Evan', 'Tom Holland'];
@@ -14,14 +15,24 @@ function App() {
     {id : 1, name: 'Arijith Singh', age: 35},
     {id : 2, name: 'Lena Del Ray', age: 33},
     {id : 3, name: 'Ed Sheeren', age: 31},
-  ]
+  ];
+
+  const books = [
+    {id : 1, name : 'Physics', price: 250},
+    {id : 2, name : 'Chemistry', price: 350},
+    {id : 3, name : 'Math', price: 255},
+    {id : 4, name : 'Biology', price: 290},
+  ];
+  
   return (
     <>
       <h1>React Core Concept</h1>
 
-      {
+      <Library books={books}></Library>
+
+      {/* {
         singers.map(singer => <Singer key={singer.id} singer={singer}></Singer>)
-      }
+      } */}
 
 
       {/* {
