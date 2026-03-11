@@ -18,7 +18,7 @@ function App() {
         isDone={false}></ToDo>
       <ToDo
         task="Take a shower"
-        isDone={true} time={100}></ToDo>
+        isDone={true} time=""></ToDo>
       {/* <Student></Student>
       <Person></Person>
       <Developer name="Jamshed" tech="JS"></Developer>
