@@ -15,9 +15,34 @@ function App() {
       <Device name="Desktop" model="Customize" price="55,000"></Device>
       <Device name="Mobile" model="Xiaomi" price="30,000"></Device>
       <Device name="Monitor" model="Walton" price="14,000"></Device>
+      <Player name="Kholi" runs="10,000"></Player>
+      <Player name="Williamson" runs="7,000"></Player>
+      <Salami event="Roja Eid" amount="20"></Salami>
+      <Salami event="Graduation"></Salami>
     </>
   )
 }
+
+function Salami({event, amount = 0}){
+  return(
+    <div className='student'>
+      <p>Salami For: {event}</p>
+      <p>Amount: {amount}</p>
+    </div>
+  )
+}
+
+
+function Player({name, runs}){
+  return(
+    <div className='student'>
+      <h3>Name: {name} </h3>
+      <p>Runs: {runs} </p>
+    </div>
+  )
+}
+
+// const {name, tech} = {name : 'Jamshed', tech : 'JS'}
 
 function Device(props){
   return(
@@ -45,7 +70,7 @@ function Student(){
 }
 
 function Developer(props){
-  console.log(props);
+  // console.log(props);
   
   return(
     <div style={{
