@@ -2,13 +2,24 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import ToDo from './Todo';
 
 function App() {
-
+  const time = 50;
   return (
     <>
       <h1>React Core Concept</h1>
-      <Student></Student>
+      <ToDo
+        task="Learn React"
+        isDone={true}
+        time={time}></ToDo>
+      <ToDo
+        task="Revise JS"
+        isDone={false}></ToDo>
+      <ToDo
+        task="Take a shower"
+        isDone={true} time={100}></ToDo>
+      {/* <Student></Student>
       <Person></Person>
       <Developer name="Jamshed" tech="JS"></Developer>
       <Developer name="Mumir" tech="Python"></Developer>
@@ -18,13 +29,13 @@ function App() {
       <Player name="Kholi" runs="10,000"></Player>
       <Player name="Williamson" runs="7,000"></Player>
       <Salami event="Roja Eid" amount="20"></Salami>
-      <Salami event="Graduation"></Salami>
+      <Salami event="Graduation"></Salami> */}
     </>
   )
 }
 
-function Salami({event, amount = 0}){
-  return(
+function Salami({ event, amount = 0 }) {
+  return (
     <div className='student'>
       <p>Salami For: {event}</p>
       <p>Amount: {amount}</p>
@@ -33,8 +44,8 @@ function Salami({event, amount = 0}){
 }
 
 
-function Player({name, runs}){
-  return(
+function Player({ name, runs }) {
+  return (
     <div className='student'>
       <h3>Name: {name} </h3>
       <p>Runs: {runs} </p>
@@ -44,12 +55,12 @@ function Player({name, runs}){
 
 // const {name, tech} = {name : 'Jamshed', tech : 'JS'}
 
-function Device(props){
-  return(
+function Device(props) {
+  return (
     <div style={{
-      border : '2px solid purple',
-      borderRadius : '20px',
-      marginTop : '10px',
+      border: '2px solid purple',
+      borderRadius: '20px',
+      marginTop: '10px',
     }}>
       <h3>Device: {props.name}</h3>
       <h4>Model: {props.model} </h4>
@@ -59,8 +70,8 @@ function Device(props){
   )
 }
 
-function Student(){
-  
+function Student() {
+
   return (
     <div className='student'>
       <p>Name: </p>
@@ -69,13 +80,13 @@ function Student(){
   )
 }
 
-function Developer(props){
+function Developer(props) {
   // console.log(props);
-  
-  return(
+
+  return (
     <div style={{
-      border : '2px solid green',
-      borderRadius : '20px',
+      border: '2px solid green',
+      borderRadius: '20px',
     }}>
       <h3>Developer: {props.name}</h3>
       <p>Technology: {props.tech} </p>
@@ -83,21 +94,21 @@ function Developer(props){
   )
 }
 
-function Person () {
+function Person() {
   const age = 17;
   const name = 'Jamshed';
 
   const personStyle = {
-    color : 'red',
-    textAlign : 'left',
-    
+    color: 'red',
+    textAlign: 'left',
+
   }
   return (
     <p id='' title='' style={personStyle}>I am a person: {name} {age}</p>
   )
 }
 
-function Sports () {
+function Sports() {
   return (
     <div>
       <h3>Cricket</h3>
