@@ -3,13 +3,33 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ToDo from './Todo';
+import Actor  from './actor';
+import Singer from './Singer';
 
 function App() {
-  const time = 50;
+  const actors = ['Chris Hemsworth', 'RDJ', 'Chris Evan', 'Tom Holland'];
+  // const time = 50;
+
+  const singers = [
+    {id : 1, name: 'Arijith Singh', age: 35},
+    {id : 2, name: 'Lena Del Ray', age: 33},
+    {id : 3, name: 'Ed Sheeren', age: 31},
+  ]
   return (
     <>
       <h1>React Core Concept</h1>
-      <ToDo
+
+      {
+        singers.map(singer => <Singer key={singer.id} singer={singer}></Singer>)
+      }
+
+
+      {/* {
+        actors.map(actor => <Actor actor={actor}></Actor>)
+      } */}
+
+
+      {/* <ToDo
         task="Learn React"
         isDone={true}
         time={time}></ToDo>
@@ -18,7 +38,8 @@ function App() {
         isDone={false}></ToDo>
       <ToDo
         task="Take a shower"
-        isDone={true} time=""></ToDo>
+        isDone={true} time=""></ToDo> */}
+
       {/* <Student></Student>
       <Person></Person>
       <Developer name="Jamshed" tech="JS"></Developer>
