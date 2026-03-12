@@ -2,7 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import Counter from './Counters';
+import Batsman from './Batsman';
+import Bowler from "./Bowler";
 import './App.css'
+
 
 function App() {
 
@@ -23,6 +27,12 @@ function App() {
     <>
       
       <h3>Vite + React</h3>
+
+      <Counter></Counter>
+      <Batsman></Batsman>
+      <Bowler></Bowler>
+
+
       <button onClick={handleClick}>Click Me</button>
 
       <button onClick={
