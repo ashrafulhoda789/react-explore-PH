@@ -11,6 +11,7 @@ import { Suspense } from 'react';
 import Friends from './Friends';
 import Posts from './Posts';
 import Players from './Players';
+import Todos from './Todos';
 
 const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users')
 .then(res => res.json())
@@ -26,11 +27,17 @@ const fetchPosts = async () =>{
   return res.json();
 }
 
+const fetchTodos = async() =>{
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos');
+  return res.json();
+}
+
 
 function App() {
 
   const friendsPromise = fetchFriends();
   const postPromise = fetchPosts();
+  const todosPromise = fetchTodos();
 
   function handleClick(){
     alert("I am clicked");
@@ -50,27 +57,40 @@ function App() {
       
       <h3>Vite + React</h3>
 
-      <Counter></Counter>
 
-      <Players></Players>
+      <Suspense fallback={<p>Todos are loading...</p>}>
+        <Todos todosPromise={todosPromise}></Todos>
+      </Suspense>
 
-      <Suspense fallback={<h3>Loading...</h3>}>
+
+
+
+
+
+
+
+
+      {/* <Counter></Counter> */}
+
+      {/* <Players></Players> */}
+
+      {/* <Suspense fallback={<h3>Loading...</h3>}>
         <Users fetchUsers={fetchUsers}></Users>
-      </Suspense>
+      </Suspense> */}
 
-      <Suspense fallback={<h3>Friends are coming for treat...</h3>}>
+      {/* <Suspense fallback={<h3>Friends are coming for treat...</h3>}>
         <Friends friendsPromise={friendsPromise}></Friends>
-      </Suspense>
+      </Suspense> */}
 
-      <Suspense fallback={<h4>Posts are coming...</h4>}>
+      {/* <Suspense fallback={<h4>Posts are coming...</h4>}>
         <Posts postPromise={postPromise}></Posts>
-      </Suspense>
+      </Suspense> */}
 
-      <Batsman></Batsman>
-      <Bowler></Bowler>
+      {/* <Batsman></Batsman> */}
+      {/* <Bowler></Bowler> */}
 
 
-      <button onClick={handleClick}>Click Me</button>
+      {/* <button onClick={handleClick}>Click Me</button>
 
       <button onClick={
         function handleClick2(){
@@ -84,7 +104,7 @@ function App() {
         alert("Click 4")
       }}>Click me 4</button>
 
-      <button onClick={()=> handleAdd(5)}>Click 5</button>
+      <button onClick={()=> handleAdd(5)}>Click 5</button> */}
       
     </>
   )
