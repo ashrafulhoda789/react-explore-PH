@@ -21,6 +21,7 @@
       "id": 2,
       "name": "Standard Plan",
       "price": 1999,
+      "popular" : true,
       "duration": "month",
       "description": "Best for regular gym-goers who want more flexibility.",
       "features": [
