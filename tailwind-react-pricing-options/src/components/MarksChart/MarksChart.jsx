@@ -1,7 +1,7 @@
 import React, { use } from 'react';
-import { Bar, BarChart, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
-const MarksChart = ({marksPromise}) => {
+const MarksChart = ({ marksPromise }) => {
     const marksDataRes = use(marksPromise);
     // console.log(marksData);
     const marksData = marksDataRes.data;
@@ -9,11 +9,11 @@ const MarksChart = ({marksPromise}) => {
     // data processing for chart
     const marksChartData = marksData.map(studentData => {
         const student = {
-            id : studentData.id,
-            name : studentData.name,
-            physics : studentData.physics,
-            chemistry : studentData.chemistry,
-            math : studentData.math,
+            id: studentData.id,
+            name: studentData.name,
+            physics: studentData.physics,
+            chemistry: studentData.chemistry,
+            math: studentData.math,
         }
 
         const avg = (student.physics + student.chemistry + student.math) / 3;
@@ -23,13 +23,19 @@ const MarksChart = ({marksPromise}) => {
 
     console.log(marksChartData);
     return (
-        <div>
-            <BarChart width={500} height={300} data={marksChartData}>
-                <XAxis dataKey={'name'}></XAxis>
-                <YAxis></YAxis>
-                <Bar dataKey={'avg'} fill='green'></Bar>
-                <Bar dataKey={'chemistry'} fill='blue'></Bar>
-            </BarChart>
+        <div className='flex justify-center mt-10'>
+            <div className=' w-full md:w-2/3 lg:w-1/2 h-75 border p-6 rounded-2xl'>
+            <h1 className='text-center text-xl md:text-2xl'>Bar Chart</h1>
+                <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={marksChartData}>
+                        <XAxis dataKey={'name'}></XAxis>
+                        <YAxis></YAxis>
+                        <Bar dataKey={'avg'} fill='green'></Bar>
+                        <Bar dataKey={'chemistry'} fill='blue'></Bar>
+                    </BarChart>
+                </ResponsiveContainer>
+
+            </div>
         </div>
     );
 };

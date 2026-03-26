@@ -22,11 +22,12 @@ function App() {
         {/* <DaisyNav></DaisyNav> */}
       </header>
 
-      <main>
+      <main className='w-10/12 mx-auto'>
         <Suspense fallback={<span className="loading loading-spinner loading-lg"></span>}>
           <PricingOptions pricingPromise={pricingPromise}></PricingOptions>
         </Suspense>
 
+        <h1 className='text-center text-xl md:text-2xl mt-10'>ReChart Functionality</h1>
         <Suspense fallback={<span className="loading loading-spinner loading-lg"></span>}>
           <MarksChart marksPromise={marksPromise}></MarksChart>
         </Suspense>
