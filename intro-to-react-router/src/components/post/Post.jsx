@@ -7,7 +7,7 @@ const Post = ({ post }) => {
     const navigate = useNavigate();
 
     const handleNavigate = () => {
-        navigate(`/posts/${id}`)
+        navigate(`/posts/${id}`);
     }
     return (
         <div style={{
