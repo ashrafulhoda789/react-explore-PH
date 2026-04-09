@@ -1,16 +1,46 @@
-# React + Vite
+# 📘 React Learning Journey – SPA & React Router
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Single Page Application (SPA)
 
-Currently, two official plugins are available:
+A **Single Page Application (SPA)** is a modern web application architecture where:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Only a **single HTML page** is loaded initially
+- The application **dynamically updates content** without reloading the page
+- Navigation feels **fast, smooth, and seamless**
 
-## React Compiler
+### 🔑 Key Benefits
+- ⚡ Faster performance (no full reload)
+- 🎯 Better user experience
+- 🔄 Efficient data handling with APIs
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+👉 In React, SPAs are built by rendering and updating components instead of reloading entire pages.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧭 React Router Overview
+
+React Router enables **client-side routing** in a React SPA, allowing users to navigate between different views without refreshing the page.
+
+---
+
+## 🔧 Router Setup
+
+### 🔹 `createBrowserRouter`
+- Creates a router configuration using browser history API
+- Defines all routes in a structured way
+
+### 🔹 `RouterProvider`
+- Provides the router to the entire application
+- Wraps the root component
+
+```js
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />
+  }
+]);
+
+<RouterProvider router={router} />
