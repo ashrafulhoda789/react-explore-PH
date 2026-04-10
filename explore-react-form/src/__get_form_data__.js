@@ -10,3 +10,10 @@
  * 4. uncontrolled using useRef
  * 5. hook form for controlling data
 */
+
+
+/**
+ * ----Context API-----
+ * 1. create a context using createContext with a default value
+ * make sure you export the context to be used in other file
+*/
